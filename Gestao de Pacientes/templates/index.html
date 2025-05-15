@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pacientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <dvi class="container">
+        <h1>Lista de Pacientes</h1>
+        <ul>
+            {% for paciente in pacientes %}
+            <li>{{ paciente[1] }} - {{ paciente[2] }} anos - {{ paciente[3] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('novo_paciente') }}"><button class="add-patient">Adicionar Novo Paciente</button></a> 
+        <a href="{{ url_for('limpar_pacientes') }}" class="clear-btn">Limpar Lista de Pacientes</a>
+    </div>
+
+    </div>
+</body>
